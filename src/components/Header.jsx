@@ -46,13 +46,13 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <Link to="/" className={`text-2xl font-bold ${logoClass}`}>
+            <Link to="/" className={`text-xl md:text-2xl font-bold ${logoClass}`}>
               The Creators Marketing Agency
             </Link>
           </div>
           
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8 absolute left-1/2 -translate-x-1/2">
+          <div className="hidden lg:flex space-x-8 absolute left-1/2 -translate-x-1/2">
             {navLinks.map((link) => (
               <NavLink
                 key={link.name}
@@ -65,7 +65,7 @@ const Header = () => {
           </div>
 
           {/* Social Icons - Desktop */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-4">
             <a href="https://www.instagram.com/_.thecreators_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-brand-text-light hover:text-brand-primary transition-colors">
               <Instagram size={18} />
             </a>
@@ -81,7 +81,7 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
+          <div className="lg:hidden flex items-center">
             <button
               onClick={toggleMenu}
               aria-label="Toggle menu"
@@ -95,7 +95,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white shadow-lg absolute w-full top-full left-0">
+        <div className="lg:hidden bg-white shadow-lg absolute w-full top-full left-0">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navLinks.map((link) => (
               <NavLink
@@ -111,6 +111,21 @@ const Header = () => {
                 {link.name}
               </NavLink>
             ))}
+            {/* Social Icons - Mobile */}
+            <div className="flex items-center space-x-4 px-3 py-2 mt-2 border-t border-gray-100">
+              <a href="https://www.instagram.com/_.thecreators_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-brand-text-light hover:text-brand-primary transition-colors">
+                <Instagram size={20} />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-brand-text-light hover:text-brand-primary transition-colors">
+                <Twitter size={20} />
+              </a>
+              <a href="https://www.facebook.com/people/The-Creators-Marketing-Agency/61577798090545/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-brand-text-light hover:text-brand-primary transition-colors">
+                <Facebook size={20} />
+              </a>
+              <a href="https://www.linkedin.com/company/112085339/admin/dashboard/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-brand-text-light hover:text-brand-primary transition-colors">
+                <Linkedin size={20} />
+              </a>
+            </div>
           </div>
         </div>
       )}
