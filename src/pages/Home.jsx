@@ -35,6 +35,7 @@ const Counter = ({ value }) => {
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const showWorksSection = false;
+  const showBrandsSection = false;
   const _MOTION = motion;
   const fadeInUp = {
     hidden: { opacity: 0, y: 60 },
@@ -143,17 +144,17 @@ const Home = () => {
   const testimonials = [
     {
       name: 'Sarah Johnson',
-      role: 'CEO, TechStart',
+      role: '',
       content: 'The Creators Marketing Agency transformed our online presence. We saw a 200% increase in leads within the first 3 months.'
     },
     {
       name: 'Michael Chen',
-      role: 'Marketing Director, GrowthInc',
+      role: '',
       content: 'The team is professional, creative, and results-oriented. Their data-driven approach is a game-changer.'
     },
     {
       name: 'Emily Davis',
-      role: 'Founder, EcoLife',
+      role: '',
       content: 'I highly recommend The Creators Marketing Agency. They truly understand our brand and have helped us scale significantly.'
     }
   ];
@@ -286,7 +287,7 @@ const Home = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle className="w-5 h-5 text-brand-primary" />
-                  <span>10+ Years Experience</span>
+                  <span>2+ Years Experience</span>
                 </div>
               </motion.div>
             </div>
@@ -862,6 +863,7 @@ const Home = () => {
       </section>
 
       {/* Brands Section */}
+      {showBrandsSection && (
       <section className="py-32 bg-white text-brand-text">
         <div className="container mx-auto px-4">
           <motion.div 
@@ -904,6 +906,7 @@ const Home = () => {
           </motion.div>
         </div>
       </section>
+      )}
 
       {/* FAQ Section */}
       <section className="py-32 bg-brand-background-alt">
